@@ -5,7 +5,7 @@
             [guestbook.models.db :as db]))
 
 (defn format-time [timestamp]
-  (-> "dd.MM.yyyy"
+  (-> "dd.MM.yyyy HH:mm"
       (java.text.SimpleDateFormat.)
       (.format timestamp)))
 
@@ -29,8 +29,8 @@
                           (text-field "name" name)
                           ;;[:input]
                           [:p "Message"]
-                          ;(:text-area {:rows 10 :cols 40} "message" message)
-                          [:textarea {:rows 10 :cols 40} "message" message]
+                          (text-area {:rows 10 :cols 40 :placeholder "text"} "message" message)
+                          ;[:textarea {:rows 10 :cols 40} "message" message]
                           [:br]
                           (submit-button "comment"))))
 
