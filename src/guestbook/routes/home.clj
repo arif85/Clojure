@@ -4,15 +4,18 @@
             [hiccup.form :refer :all]
             [guestbook.models.db :as db]))
 
+(defn format-time [timestamp]
+  (-> "dd.MM.yyyy"
+      (java.text.SimpleDateFormat.)
+      (.format timestamp)))
+
 (defn show-guests []
   [:ul.guests
-   (for [{:keys [message name timestamp]}
-         [{:message "Howdy" :name "Bob" :timestamp nil}
-          {:message "Hello" :name "Bob" :timestamp nil}]]
+   (for [{:keys [message name timestamp]} (db/read-guests)]
      [:li
       [:blockquote message]
-      [:p "-" [:cite name]]
-      [:time timestamp]])])
+      [:p "- " [:cite name]]
+      [:time (format-time timestamp)]])])
 
 
 (defn home [& [name message error]]
@@ -26,7 +29,7 @@
                           (text-field "name" name)
                           ;;[:input]
                           [:p "Message"]
-                          (:text-area  "message" message)
+                          ;(:text-area {:rows 10 :cols 40} "message" message)
                           [:textarea {:rows 10 :cols 40} "message" message]
                           [:br]
                           (submit-button "comment"))))
@@ -40,7 +43,7 @@
     (home name message "Don't you have something to say?")
     :else
     (do
-      (println name message )
+      (db/save-message name message)
       (home))))
 
 
