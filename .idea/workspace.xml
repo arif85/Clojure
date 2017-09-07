@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8acb9c85-96b3-4b38-a71b-79a966ecf7d9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.sq3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/guestbook/models/db.sq3" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/guestbook/handler.clj" afterPath="$PROJECT_DIR$/src/guestbook/handler.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/guestbook/models/db.clj" afterPath="$PROJECT_DIR$/src/guestbook/models/db.clj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/guestbook/routes/home.clj" afterPath="$PROJECT_DIR$/src/guestbook/routes/home.clj" />
-    </list>
+    <list default="true" id="8acb9c85-96b3-4b38-a71b-79a966ecf7d9" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +22,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.clj" pinned="false" current-in-tab="true">
+      <file leaf-file-name="handler.clj" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/guestbook/test/handler.clj">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="home.clj" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/guestbook/routes/home.clj">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="660">
@@ -134,7 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/guestbook/test/handler.clj" />
         <option value="$PROJECT_DIR$/src/guestbook/views/layout.clj" />
         <option value="$PROJECT_DIR$/target/classes/META-INF/maven/guestbook/guestbook/pom.properties" />
         <option value="$PROJECT_DIR$/project.clj" />
@@ -142,6 +144,7 @@
         <option value="$PROJECT_DIR$/src/guestbook/handler.clj" />
         <option value="$PROJECT_DIR$/src/guestbook/models/db.clj" />
         <option value="$PROJECT_DIR$/src/guestbook/routes/home.clj" />
+        <option value="$PROJECT_DIR$/test/guestbook/test/handler.clj" />
       </list>
     </option>
   </component>
@@ -353,7 +356,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Clojure Application.guestbook.models.db">
+  <component name="RunManager" selected="Clojure Application.guestbook.test.handler">
     <configuration default="false" name="guestbook.routes.db" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
       <module name="guestbook" />
       <setting name="path" value="$PROJECT_DIR$/src/guestbook/models/db.clj" />
@@ -374,6 +377,17 @@
       <setting name="vmparams" value="" />
       <setting name="params" value="" />
       <setting name="workDir" value="$PROJECT_DIR$/src/guestbook/models" />
+      <method />
+    </configuration>
+    <configuration default="false" name="guestbook.test.handler" type="ClojureScriptRunConfiguration" factoryName="Clojure Script" temporary="true">
+      <module name="guestbook" />
+      <setting name="path" value="$PROJECT_DIR$/test/guestbook/test/handler.clj" />
+      <setting name="namespace" value="" />
+      <setting name="useLein" value="false" />
+      <setting name="profiles" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="$PROJECT_DIR$/test/guestbook/test" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -613,14 +627,16 @@
       <setting name="rowsRange" value="" />
       <method />
     </configuration>
-    <list size="2">
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="Clojure Application.guestbook.routes.db" />
       <item index="1" class="java.lang.String" itemvalue="Clojure Application.guestbook.models.db" />
+      <item index="2" class="java.lang.String" itemvalue="Clojure Application.guestbook.test.handler" />
     </list>
     <recent_temporary>
-      <list size="2">
-        <item index="0" class="java.lang.String" itemvalue="Clojure Application.guestbook.models.db" />
-        <item index="1" class="java.lang.String" itemvalue="Clojure Application.guestbook.routes.db" />
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Clojure Application.guestbook.test.handler" />
+        <item index="1" class="java.lang.String" itemvalue="Clojure Application.guestbook.models.db" />
+        <item index="2" class="java.lang.String" itemvalue="Clojure Application.guestbook.routes.db" />
       </list>
     </recent_temporary>
   </component>
@@ -659,9 +675,9 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17377399" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17377399" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25586355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25586355" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25320512" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32942432" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -912,14 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/guestbook/test/handler.clj">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="9" column="50" lean-forward="false" selection-start-line="9" selection-start-column="50" selection-end-line="9" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/public/css/screen.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1014,6 +1022,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="33" column="26" lean-forward="false" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/guestbook/test/db.sq3">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/guestbook/test/handler.clj">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="9" column="54" lean-forward="false" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
           <folding />
         </state>
       </provider>
