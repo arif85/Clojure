@@ -16,13 +16,13 @@
       [:name "TEXT"]
       [:message "TEXT"])
     (sql/do-commands "CREATE INDEX timestamp_index ON guestbook (timestamp)")))
-;(create-guestbook-table)
+(create-guestbook-table)
 
 (defn read-guests []
   (sql/with-connection
     db
     (sql/with-query-results res
-                            ["SELECT * FROM guestbook ORDER BY timestamp DESC"]
+                            ["SELECT * FROM guestbook ORDER BY timestamp DESC limit 1"]
                             (doall res))))
 
 (defn save-message [name message]
@@ -32,10 +32,4 @@
           :guestbook
           [:name :message :timestamp]
           [name message (new java.util.Date)])))
-;(ns-unmap 'user 'save-message)
 
-;(use 'guestbook.models.db)
-
-(save-message "Bob12" "Hello")
-
-;(read-guests)

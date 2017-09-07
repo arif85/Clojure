@@ -20,6 +20,7 @@
 
 (defn home [& [name message error]]
   (layout/common [:h1 "GuestBook"]
+                 [:hr]
                  [:p "Welcome to my guestbook"]
                  [:p error]
                  (show-guests)
@@ -30,7 +31,7 @@
                           ;;[:input]
                           [:p "Message"]
                           (text-area {:rows 10 :cols 40 :placeholder "text"} "message" message)
-                          ;[:textarea {:rows 10 :cols 40} "message" message]
+                          [:br]
                           [:br]
                           (submit-button "comment"))))
 
