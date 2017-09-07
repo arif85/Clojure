@@ -16,7 +16,7 @@
       [:name "TEXT"]
       [:message "TEXT"])
     (sql/do-commands "CREATE INDEX timestamp_index ON guestbook (timestamp)")))
-(create-guestbook-table)
+;(create-guestbook-table)
 
 (defn read-guests []
   (sql/with-connection
