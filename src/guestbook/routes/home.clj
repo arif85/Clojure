@@ -2,7 +2,8 @@
   (:require [compojure.core :refer :all]
             [guestbook.views.layout :as layout]
             [hiccup.form :refer :all]
-            [guestbook.models.db :as db]))
+            [guestbook.models.db :as db]
+            [noir.session :as session]))
 
 (defn format-time [timestamp]
   (-> "dd.MM.yyyy HH:mm"
@@ -19,7 +20,7 @@
 
 
 (defn home [& [name message error]]
-  (layout/common [:h1 "GuestBook"]
+  (layout/common [:h1 "GuestBook " (session/get :user)]
                  [:hr]
                  [:p "Welcome to my guestbook"]
                  [:p error]

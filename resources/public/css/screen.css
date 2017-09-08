@@ -8,3 +8,18 @@ h1 {
     text-align: center;
 }
 
+form {
+    margin: 80px;
+    left: 20px;
+    width: 50%;
+    border: 2px solid #73AD21;
+    padding: 10px;
+}
+
+input {
+    margin: 10px;
+    left: 10px;
+    width: 20%;
+    border: 5px solid #00;
+    padding: 2px;
+}
