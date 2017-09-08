@@ -58,4 +58,4 @@
            (GET "/logout" [] (logout))
            (POST "/logout" []
              (session/clear!)
-             (redirect "/")))
+             (redirect "/login")))
