@@ -4,6 +4,6 @@
 (defn common [& body]
   (html5
     [:head
-     [:title "Welcome to My First Clojure Project!"]
+     [:title "* Welcome! *"]
      (include-css "/css/screen.css")]
     [:body body]))

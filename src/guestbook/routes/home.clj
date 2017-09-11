@@ -31,7 +31,7 @@
                           (text-field "name" name)
                           ;;[:input]
                           [:p "Message"]
-                          (text-area {:rows 10 :cols 40 :placeholder "text"} "message" message)
+                          (text-area {:rows 10 :cols 100 :placeholder "text"} "message" message)
                           [:br]
                           [:br]
                           (submit-button "comment"))))
