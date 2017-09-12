@@ -49,33 +49,26 @@
              (submit-button "Login"))))
 
 (defn handle-registration [id pass pass1]
-  (rule (has-value? id)
-       [:id "Username field is empty"])
-  (rule (has-value? pass)
-        [:pass "password field is empty"])
-  (rule (has-value? pass1)
-        [:pass1 "please confirm your password"])
-  (rule (= pass pass1)
-        [:pass "password was not typed correctly"])
-  (if (errors? :id :pass)
-    (registration-page)
-    (do
-      (db/add-user-record {:id id :pass (crypt/encrypt pass)})
-      (redirect "/login")))
+  (let [user (db/get-user id)]
+    (rule (has-value? id)
+          [:id "Username field is empty"])
+    (rule (= user (:id user))
+          [:id "User exists"])
+    (rule (has-value? pass)
+          [:pass "password field is empty"])
+    (rule (has-value? pass1)
+          [:pass1 "please confirm your password"])
+    (rule (= pass pass1)
+          [:pass "password was not typed correctly"])
+    (if (errors? :id :pass)
+      (registration-page)
+      (do
+        (db/add-user-record {:id id :pass (crypt/encrypt pass)})
+        (redirect "/login")))
+    )
   )
 
 (defn handle-login [id pass]
-  #_(cond
-      (empty? id)
-      (login-page "screen name is required")
-      (empty? pass)
-      (login-page "password is required")
-      (and (= "Arif" id) (= "Huseinov" pass))
-      (do
-        (session/put! :user id)
-        (redirect "/"))
-      :else
-      (login-page "authentication failed"))
   (let [user (db/get-user id)]
     (rule (has-value? id)
           [:id "screen name is required"])
