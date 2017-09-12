@@ -48,6 +48,22 @@
              (control password-field :pass "Password")
              (submit-button "Login"))))
 
+(defn handle-registration [id pass pass1]
+  (rule (has-value? id)
+       [:id "Username field is empty"])
+  (rule (has-value? pass)
+        [:pass "password field is empty"])
+  (rule (has-value? pass1)
+        [:pass1 "please confirm your password"])
+  (rule (= pass pass1)
+        [:pass "password was not typed correctly"])
+  (if (errors? :id :pass)
+    (registration-page)
+    (do
+      (db/add-user-record {:id id :pass (crypt/encrypt pass)})
+      (redirect "/login")))
+  )
+
 (defn handle-login [id pass]
   #_(cond
       (empty? id)
@@ -60,20 +76,18 @@
         (redirect "/"))
       :else
       (login-page "authentication failed"))
-  (rule (has-value? id)
-        [:id "screen name is required"])
-  (rule (has-value? pass)
-        [:pass "password is required"])
-  (rule (= "Arif" id)
-        [:id "unknown user_id"])
-  (rule (= "Huseinov" pass)
-        [:pass "invalid password"])
-  (if (errors? :id :pass)
-    (login-page)
-    (do
-      (session/put! :user id)
-      (redirect "/"))))
-
+  (let [user (db/get-user id)]
+    (rule (has-value? id)
+          [:id "screen name is required"])
+    (rule (has-value? pass)
+          [:pass "password is required"])
+    (rule (and user (crypt/compare pass (:pass user)))
+          [:pass "invalid password"])
+    (if (errors? :id :pass)
+      (login-page)
+      (do
+        (session/put! :user id)
+        (redirect "/")))))
 
 (defn logout []
   (layout/common
@@ -83,9 +97,10 @@
 (defroutes auth-routes
            (GET "/register" [] (registration-page))
            (POST "/register" [id pass pass1]
-             (if (= pass pass1)
-               (redirect "/")
-               (registration-page)))
+             ;(if (= pass pass1)
+             ;(redirect "/")
+             ; (registration-page))
+             (handle-registration id pass pass1))
            (GET "/login" [] (login-page))
            (POST "/login" [id pass]
              (handle-login id pass)
@@ -95,4 +110,5 @@
            (GET "/logout" [] (logout))
            (POST "/logout" []
              (session/clear!)
-             (redirect "/login")))
+             (redirect "/login"))
+           )
